@@ -1,3 +1,6 @@
+<?php
+    include_once "loginLogic.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +27,20 @@
                     <img src="images/user.png" alt="">
             </div>
 
-            <form class="col-12" method="" action="">
+            <form class="col-12" method="POST" action="loginLogic.php">
+
+                <?php if(isset($_GET['error'])) { ?>
+                    <?php
+                        if($_GET['error'] == "UsernameError") {
+                            echo '<p class="error">Molimo Vas unesite korisničko ime</p>';
+                        } else if($_GET['error'] == "PasswordError") {
+                            echo '<p class="error">Molimo Vas unesite lozinku</p>';
+                        } else if($_GET['error'] == "UserNamePasswordError") {
+                            echo '<p class="error">Neispravno koirsni;ko ime ili lozinka</p>';
+                        }
+                          
+                    ?>
+                   <?php }?>
 
 
                 <div class="form-group">
