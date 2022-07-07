@@ -45,6 +45,26 @@
                         }
                     ?>
 
+                    <?php
+                        if(isset($_SESSION['is_admin']) && $_SESSION['is_admin']==1) {
+                            echo "<li><a href='adminPage.php'>Podešavanja</a></li>";
+                        }
+                    ?>
+
+                    <?php
+                        if(isset($_SESSION['is_admin']) && $_SESSION['is_admin']==0) {
+                            echo "<li><a href='comics.php'>Stripovi</a></li>";
+                        }
+                    ?> 
+
+                    <?php
+                        if(isset($_SESSION['id'])) {
+                            echo "<li><a href='logout.php'>Odjava</a></li>";
+                        }
+                    ?>
+
+
+
 
                 </ul>
 
