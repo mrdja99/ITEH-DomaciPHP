@@ -23,12 +23,11 @@ html, body {
 }
 
 .navbar-default .navbar-nav li a{
-    color:gray;
+    color:whitesmoke;
 }
 
 .navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a:active{
-    /*color:#F39237;*/
-    color:gray;
+    color:#F39237;
 }
 
 nav a{

@@ -1,3 +1,8 @@
+<?php
+
+    session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +21,7 @@
 
 </head>
 <body>
-      <nav class="navbar navbar-default navbar-fixed-top navbar-fixed-top">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toogle" data-toogle="collapse">
@@ -29,7 +34,19 @@
                     <img src="images/Logo-250x250-1-100x100.webp" class="image-logo">
                 </a>
             </div>
-            <div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-main">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="active" href="#">Početna</a></li>
+
+                    <?php
+                        if(!isset($_SESSION['id'])) {
+                            echo "<li><a href='register.php'>Registracija</a></li>
+                            <li><a href='login.php'>Prijava</a></li>";
+                        }
+                    ?>
+
+
+                </ul>
 
             </div>
         </div>
