@@ -1,3 +1,6 @@
+<?php
+    include_once "registerLogic.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +26,25 @@
                 <h1>Registracija</h1>
             </div>
 
-            <form class="col-12" method="" action="">
+            <form class="col-12" method="POST" action="registerLogic.php">
+
+                <?php if(isset($_GET['error'])) { ?>
+                    <?php
+                        if($_GET['error'] == "NameError") {
+                            echo '<p class="error">Molimo Vas unesite ime</p>';
+                        } else if($_GET['error'] == "SurnameError") {
+                            echo '<p class="error">Molimo Vas unesite prezime</p>';
+                        } else if($_GET['error'] == "UsernameError") {
+                            echo '<p class="error">Molimo Vas unesite korisničko ime</p>';
+                        } else if($_GET['error'] == "EmailError") {
+                            echo '<p class="error">Molimo Vas unesite email adresu</p>';
+                        } else if($_GET['error'] == "PasswordError") {
+                            echo '<p class="error">Molimo Vas unesite lozinku</p>';
+                        }
+                          
+                    ?>
+                   <?php }?>
+                
 
 
                 <div class="form-group">
