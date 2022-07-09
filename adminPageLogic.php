@@ -64,6 +64,56 @@ class Model {
         return $data;
     }
 
+    public function fetch_single($id)
+    {
+
+        $data = null;
+
+        $query = "SELECT* FROM comics WHERE comic_id='$id'";
+        if ($sql = $this->conn->query($query)) {
+            while ($row = $sql->fetch_assoc()) {
+                $data = $row;
+            }
+        }
+        return $data;
+    }
+
+    public function delete($id)
+    {
+        $query = "DELETE FROM comics
+            WHERE comic_id = '$id' ";
+        if ($sql = $this->conn->query($query)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function edit($id)
+    {
+
+        $data = null;
+
+        $query = "SELECT* FROM books WHERE book_id='$id'";
+        if ($sql = $this->conn->query($query)) {
+            while ($row = $sql->fetch_assoc()) {
+                $data = $row;
+            }
+        }
+        return $data;
+    }
+
+    public function update($data)
+    {
+        $query = " UPDATE comics SET comic_name='$data[comic_name]', writer='$data[writer]', genre='$data[genre]', edition='$data[edition]'
+             WHERE comic_id='$data[comic_id]'";
+        if ($sql = $this->conn->query($query)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
 
 ?>

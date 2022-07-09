@@ -141,9 +141,9 @@ if(!$_SESSION['id'] || ($_SESSION['id'] && $_SESSION['is_admin']==0)){
                                         <td><?php echo $row['surname']; ?></td>
                                         <td><?php echo $row['username']; ?></td>
                                         <td>
-                                        <a href="read.php?book_id=<?php echo $row['book_id']; ?>" class="badge" id="read">Read</a>
-                                        <a href="delete.php?book_id=<?php echo $row['book_id']; ?>" class="badge" id="delete">Delete</a>
-                                        <a href="edit.php?book_id=<?php echo $row['book_id']; ?>" class="badge" id="edit">Edit</a>
+                                        <a href="read.php?comic_id=<?php echo $row['comic_id']; ?>" class="badge" id="read">Detalji</a>
+                                        <a href="delete.php?comic_id=<?php echo $row['comic_id']; ?>" class="badge" id="delete">Obriši</a>
+                                        <a href="edit.php?comic_id=<?php echo $row['comic_id']; ?>" class="badge" id="edit">Izmeni</a>
                                         </td>
                                     </tr>
                                     <?php
