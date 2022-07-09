@@ -114,6 +114,46 @@ class Model {
         }
     }
 
+    public function update2($data)
+    {
+        $query = "UPDATE comics SET user_id='$data[user_id]'
+            WHERE comic_id='$data[comic_id]'";
+        if ($sql = $this->conn->query($query)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function sortComicsByTitle()
+    {
+        $data = null;
+
+        $query = "SELECT * FROM comics ORDER BY comic_name";
+
+        if ($sql = $this->conn->query($query)) {
+            while ($row = mysqli_fetch_assoc($sql)) {
+                $data[] = $row;
+            }
+        }
+        return $data;
+    }
+
+    public function searchComics($text)
+    {
+        $data = [];
+
+        $query = "SELECT * FROM comics WHERE comic_name LIKE '%" . $text . "%'";
+
+        if ($sql = $this->conn->query($query)) {
+            while ($row = mysqli_fetch_assoc($sql)) {
+                $data[] = $row;
+            }
+        }
+        return $data;
+    }
+
+
 }
 
 ?>

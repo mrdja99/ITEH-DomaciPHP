@@ -48,7 +48,7 @@
                 </div>
                     
                 <div class="form-group">
-                    <input type="text" name="password" class="form-control" placeholder="Unesite šifru">
+                    <input type="password" name="password" class="form-control" placeholder="Unesite šifru">
                 </div>
 
                 <button type="submit" class="btn">Prijavi se</button>
